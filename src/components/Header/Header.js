@@ -1,9 +1,11 @@
 import React from 'react';
+import logo from '../../img/logo.png'
 
 const Header = () => {
     return (
         <div  className='bg-info p-5 text-white text-center'>
-            <h2>Welcome To Books Store</h2>
+            <img width="100px" src={logo} alt="" />
+            <h2 className='fw-bold'>Welcome To Books Store</h2>
         </div>
     );
 };

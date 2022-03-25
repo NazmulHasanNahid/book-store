@@ -32,7 +32,7 @@ const Books = () => {
             </div>
             <div className='cart'>
                {
-                   cart.map(item => <Cart item={item}></Cart>)
+                   cart.map(item => <Cart key={item.id} item={item}></Cart>)
                }
                <button className='btn btn-info text-white m-2'>Choose 1 For Me</button>
                <button onClick={chooseBtn} className='btn btn-info text-white m-2 d-flex align-items-center'>Choose Again <MdRemoveShoppingCart size={30} /> </button>

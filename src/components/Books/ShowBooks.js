@@ -9,7 +9,7 @@ const ShowBooks = ({book , handleBtn}) => {
     return (
       <div className='showbooks-container'>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-75">
             <img src={img} class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title text-danger fw-bold">
@@ -22,8 +22,8 @@ const ShowBooks = ({book , handleBtn}) => {
               
               </p>
             </div>
-            <div class="card-footer border-0">
-              <button onClick={()=>handleBtn(book)} className='btn btn-info d-flex align-items-center    text-white fw-bold'>
+            <div class="card-footer border-0 mx-auto">
+              <button onClick={()=>handleBtn(book)} className='btn btn-info d-flex align-items-center     text-white fw-bold'>
                   Add To Cart 
                   <BsFillCartCheckFill size={25}/>
               </button>
