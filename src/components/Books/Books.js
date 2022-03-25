@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {MdRemoveShoppingCart} from 'react-icons/md'
+import {FaCommentMedical} from 'react-icons/fa'
 import Cart from '../Cart/Cart';
 import  './Books.css'
 import ShowBooks from './ShowBooks';
@@ -32,12 +33,12 @@ const Books = () => {
             </div>
                
             <div className='cart '>
-            <h4 className='fw-bold text-info  '>Selecd Items <br /> </h4>
+            <h4 className='fw-bold text-info  '>Selecd Items : {cart.length} </h4>
                {
                    cart.map(item => <Cart key={item.id} item={item}></Cart>)
                }
                <div className='btn-custom'>
-               <button className='btn btn-info text-white m-2'>Choose 1 For Me</button>
+               <button className='btn btn-info text-white m-2'>Choose 1 For Me <FaCommentMedical size={25}/></button>
                <button onClick={chooseBtn} className='btn btn-info text-white m-2 custom-margin  d-flex align-items-center '>Choose Again <MdRemoveShoppingCart size={30} /> </button>
                </div>
             </div>
