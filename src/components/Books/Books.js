@@ -27,10 +27,9 @@ const Books = () => {
                      }
             </div>
             <div className='cart'>
-                {
-                    cart.map(item => <li>{item.name}</li>)
-                }
-             
+               {
+                   cart.map(item => <Cart item={item}></Cart>)
+               }
             </div>
             
         </div>
