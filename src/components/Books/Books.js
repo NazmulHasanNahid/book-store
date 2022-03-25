@@ -30,12 +30,16 @@ const Books = () => {
                             ></ShowBooks>)
                      }
             </div>
-            <div className='cart'>
+               
+            <div className='cart '>
+            <h4 className='fw-bold text-info  '>Selecd Items <br /> </h4>
                {
                    cart.map(item => <Cart key={item.id} item={item}></Cart>)
                }
+               <div className='btn-custom'>
                <button className='btn btn-info text-white m-2'>Choose 1 For Me</button>
-               <button onClick={chooseBtn} className='btn btn-info text-white m-2 d-flex align-items-center'>Choose Again <MdRemoveShoppingCart size={30} /> </button>
+               <button onClick={chooseBtn} className='btn btn-info text-white m-2 custom-margin  d-flex align-items-center '>Choose Again <MdRemoveShoppingCart size={30} /> </button>
+               </div>
             </div>
             
         </div>

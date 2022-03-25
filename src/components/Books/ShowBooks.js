@@ -8,8 +8,8 @@ const ShowBooks = ({book , handleBtn}) => {
    
     return (
       <div className='showbooks-container'>
-        <div class="col">
-          <div class="card h-75">
+        <div class="col"> 
+          <div class="card h-75 rounded-lg">
             <img src={img} class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title text-danger fw-bold">
