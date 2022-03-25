@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {MdRemoveShoppingCart} from 'react-icons/md'
 import Cart from '../Cart/Cart';
 import  './Books.css'
 import ShowBooks from './ShowBooks';
@@ -15,6 +16,9 @@ const Books = () => {
         const newcart = [...cart , book]
         setCart(newcart)
     }
+    const chooseBtn = () =>{
+        setCart([])
+    }
     return (
         <div className='books-container container'>
             <div class="row row-cols-1 row-cols-md-3 g-4 container mx-auto my-3">
@@ -30,6 +34,8 @@ const Books = () => {
                {
                    cart.map(item => <Cart item={item}></Cart>)
                }
+               <button className='btn btn-info text-white m-2'>Choose 1 For Me</button>
+               <button onClick={chooseBtn} className='btn btn-info text-white m-2 d-flex align-items-center'>Choose Again <MdRemoveShoppingCart size={30} /> </button>
             </div>
             
         </div>

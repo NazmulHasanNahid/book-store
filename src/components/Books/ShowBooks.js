@@ -1,11 +1,13 @@
 import React from 'react';
+import { BsFillCartCheckFill } from 'react-icons/bs';
+
 import './Books.css'
 
 const ShowBooks = ({book , handleBtn}) => {
     const {name , img , price} = book
    
     return (
-      <div>
+      <div className='showbooks-container'>
         <div class="col">
           <div class="card h-100">
             <img src={img} class="card-img-top" alt="..." />
@@ -21,7 +23,10 @@ const ShowBooks = ({book , handleBtn}) => {
               </p>
             </div>
             <div class="card-footer border-0">
-              <button onClick={()=>handleBtn(book)} className='btn btn-info  text-white fw-bold'>Add To Cart</button>
+              <button onClick={()=>handleBtn(book)} className='btn btn-info d-flex align-items-center    text-white fw-bold'>
+                  Add To Cart 
+                  <BsFillCartCheckFill size={25}/>
+              </button>
             </div>
           </div>
         </div>

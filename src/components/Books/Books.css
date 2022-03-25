@@ -4,11 +4,13 @@
 }
 
 .cart{
-    background-color: burlywood;
-    color: #ffff;
+    
     margin-top: 40px;
 }
 
+.showbooks-container{
+  
+}
 @media screen and (max-width:100px){
     .books-container{
         grid-template-columns: repeat(2 , 1fr);
