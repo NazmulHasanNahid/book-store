@@ -1,10 +1,9 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
 import './Books.css'
 
-const ShowBooks = ({book}) => {
+const ShowBooks = ({book , handleBtn}) => {
     const {name , img , price} = book
-    console.log(book);
+   
     return (
       <div>
         <div class="col">
@@ -22,7 +21,7 @@ const ShowBooks = ({book}) => {
               </p>
             </div>
             <div class="card-footer border-0">
-              <button className='btn btn-info  text-white fw-bold'>Details</button>
+              <button onClick={()=>handleBtn(book)} className='btn btn-info  text-white fw-bold'>Add To Cart</button>
             </div>
           </div>
         </div>

@@ -11,8 +11,9 @@ const Books = () => {
          .then(res => res.json())
          .then(data => setBooks(data))
     },[])
-    const handleBtn = () =>{
-        
+    const handleBtn = (book) =>{
+        const newcart = [...cart , book]
+        setCart(newcart)
     }
     return (
         <div className='books-container container'>
@@ -21,11 +22,15 @@ const Books = () => {
                          books.map(book => <ShowBooks 
                             book={book} 
                             key={book.id}
+                            handleBtn={handleBtn}
                             ></ShowBooks>)
                      }
             </div>
-            <div>
-              <Cart/>
+            <div className='cart'>
+                {
+                    cart.map(item => <li>{item.name}</li>)
+                }
+             
             </div>
             
         </div>
