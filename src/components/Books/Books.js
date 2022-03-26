@@ -64,7 +64,7 @@ const closeModal = () =>{
       </div>
 
       <div className="cart ">
-        <h4 className="fw-bold text-info  ">Selecd Items : {cart.length} </h4>
+        <h4 className="fw-bold text-info  ">Selecd Items : <small> <span className="text-danger">{cart.length}</span></small>  </h4>
         {cart.map((item) => (
           <Cart key={item.id} item={item}></Cart>
         ))}
