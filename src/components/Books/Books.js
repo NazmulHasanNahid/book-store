@@ -4,26 +4,25 @@ import { FaCommentMedical } from "react-icons/fa";
 import Cart from "../Cart/Cart";
 import "./Books.css";
 import ShowBooks from "./ShowBooks";
-import Modal from 'react-modal';
+import Modal from "react-modal";
 
 const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
-  Modal.setAppElement('#root');
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+Modal.setAppElement("#root");
 
 const Books = () => {
   const [books, setBooks] = useState([]);
   const [cart, setCart] = useState([]);
-  const [random , setRandom] = useState([])
+  const [random, setRandom] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
-
 
   useEffect(() => {
     fetch("books.json")
@@ -41,16 +40,15 @@ const Books = () => {
   const handleRandom = () => {
     const newCart = [...cart];
     let randomItem = newCart[Math.floor(Math.random() * newCart.length)];
-    setRandom(randomItem)
+    setRandom(randomItem);
     console.log(random.name);
     setIsOpen(true);
-    
   };
 
-const closeModal = () =>{
+  const closeModal = () => {
     setIsOpen(false);
-}
-  
+  };
+
   return (
     <div className="books-container container">
       <div class="row row-cols-1 row-cols-md-3 g-4 container mx-auto my-3">
@@ -64,7 +62,13 @@ const closeModal = () =>{
       </div>
 
       <div className="cart ">
-        <h4 className="fw-bold text-info  ">Selected Items : <small> <span className="text-danger">{cart.length}</span></small>  </h4>
+        <h4 className="fw-bold text-info  ">
+          Selected Items :{" "}
+          <small>
+            {" "}
+            <span className="text-danger">{cart.length}</span>
+          </small>{" "}
+        </h4>
         {cart.map((item) => (
           <Cart key={item.id} item={item}></Cart>
         ))}
@@ -89,11 +93,15 @@ const closeModal = () =>{
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
-      > 
-           <p> <img width="20px" src={random.img} alt="" /> {random.name}</p>
-          <button className="btn btn-info text-white" onClick={closeModal}>close</button>
+      >
+        <p>
+          {" "}
+          <img width="20px" src={random.img} alt="" /> {random.name}
+        </p>
+        <button className="btn btn-info text-white" onClick={closeModal}>
+          close
+        </button>
       </Modal>
-      
     </div>
   );
 };
