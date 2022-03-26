@@ -38,12 +38,16 @@ const Books = () => {
   };
 
   const handleRandom = () => {
-    const newCart = [...cart];
-    let randomItem = newCart[Math.floor(Math.random() * newCart.length)];
-    setRandom(randomItem);
-    console.log(random.name);
-    setIsOpen(true);
-  };
+    if(setCart === []){
+      alert('please select product')
+    }else{
+
+      const newCart = [...cart];
+      let randomItem = newCart[Math.floor(Math.random() * newCart.length)];
+      setRandom(randomItem);
+      setIsOpen(true);
+    };
+    }
 
   const closeModal = () => {
     setIsOpen(false);
@@ -95,8 +99,8 @@ const Books = () => {
         contentLabel="Example Modal"
       >
         <p>
-          {" "}
-          <img width="20px" src={random.img} alt="" /> {random.name}
+         
+          <img width="20px" src={random?.img? random.img : 'Please Select Product'  }  alt="" /> {random?.name ? random.name:'Please Select Product'}
         </p>
         <button className="btn btn-info text-white" onClick={closeModal}>
           close
