@@ -26,7 +26,14 @@ const Books = () => {
     const [modalIsOpen, setIsOpen] = useState(false);
 
     function openModal() {
-        setIsOpen(true);
+        //setIsOpen(true);
+        const newCart = [...cart]
+        let randomItem = newCart[Math.floor(Math.random() * newCart.length)]
+        const {name, img} = randomItem
+        console.log(randomItem);
+        alert(name , img)
+        setCart([])
+        
       }
     
       
@@ -49,7 +56,7 @@ const Books = () => {
         setCart([])
     }
 
-
+   
 
     
     
@@ -73,6 +80,7 @@ const Books = () => {
                }
                <div className='btn-custom'>
                <button onClick={openModal}  className='btn btn-info text-white m-2'>Choose 1 For Me <FaCommentMedical size={25}/></button>
+
                <button onClick={chooseBtn} className='btn btn-info text-white m-2 custom-margin  d-flex align-items-center '>Choose Again <MdRemoveShoppingCart size={30} /> </button>
                </div>
 
@@ -81,12 +89,10 @@ const Books = () => {
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
+                
                 >
                    
-                    {
-                    cart.map(item => <Cart key={item.id} item={item}></Cart>)
-                   
-                     }
+                  
                     <button onClick={closeModal} className='btn btn-info text-white'>Close</button>
                 </Modal>
             </div>
