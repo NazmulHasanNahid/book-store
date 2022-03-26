@@ -10,7 +10,7 @@ const ShowBooks = ({book , handleBtn}) => {
     return (
       <div className="showbooks-container">
         <div className="col">
-          <div className="card  rounded-lg">
+          <div className="card shadow-lg border-0 rounded-lg">
             <img className='custom-width card-img-top' src={img}  alt="..." />
             <div className="card-body">
               <h5 className="card-title text-danger fw-bold">{name.slice(0,20)}</h5>
