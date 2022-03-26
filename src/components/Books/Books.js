@@ -84,7 +84,7 @@ const Books = () => {
                 >
                    
                     {
-                       cart.map(item => <Cart key={item.id} item={item}></Cart>)
+                    cart.map(item => <Cart key={item.id} item={item}></Cart>)
                    
                      }
                     <button onClick={closeModal} className='btn btn-info text-white'>Close</button>
