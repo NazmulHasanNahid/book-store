@@ -38,7 +38,7 @@ const Books = () => {
     else{
       alert('you Cant add more')
     }
-   // setCart(newcart);
+   
   };
   const chooseBtn = () => {
     setCart([]);
