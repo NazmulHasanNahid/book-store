@@ -9,13 +9,13 @@ const ShowBooks = ({book , handleBtn}) => {
    
     return (
       <div className="showbooks-container">
-        <div class="col">
-          <div class="card h-75 rounded-lg">
-            <img src={img} class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title text-danger fw-bold">{name}</h5>
-              <p class="card-text">price : ${price}</p>
-              <p class="card-text"></p>
+        <div className="col">
+          <div className="card  rounded-lg">
+            <img className='custom-width card-img-top' src={img}  alt="..." />
+            <div className="card-body">
+              <h5 className="card-title text-danger fw-bold">{name.slice(0,20)}</h5>
+              <p className="card-text">price : ${price}</p>
+              
             </div>
             <div class="card-footer border-0 mx-auto">
               <button
