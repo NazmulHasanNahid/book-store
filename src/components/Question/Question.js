@@ -2,6 +2,8 @@ import React from 'react';
 import '../Books/Books'
 const Question = () => {
     return (
+        <>
+        <h4 className='text-info my-5 fw-bold text-center'>Question And Answer  <br /> ____</h4>
         <div className='container d-flex question-style'>
             
             <div className="border m-2 p-2">
@@ -19,6 +21,7 @@ const Question = () => {
                 </div>
            
         </div>
+        </>
     );
 };
 
