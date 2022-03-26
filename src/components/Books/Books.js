@@ -103,7 +103,7 @@ const Books = () => {
       >
         <p>
          
-          <img width="20px" src={random?.img? random.img : 'Please Select Product'  }  alt="" /> {random?.name ? random.name:'Please Select Product'}
+          <img width="20px" src={random?.img? random.img : 'Please Add Product'  }  alt="" /> {random?.name ? random.name:'Please Add Product'}
         </p>
         <button className="btn btn-info text-white" onClick={closeModal}>
           close
