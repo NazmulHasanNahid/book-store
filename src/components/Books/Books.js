@@ -30,23 +30,26 @@ const Books = () => {
       .then((data) => setBooks(data));
   }, []);
   const handleBtn = (book) => {
+    
     const newcart = [...cart, book];
-    setCart(newcart);
+    if(cart.length < 4){
+      setCart(newcart);
+    }
+    else{
+      alert('you Cant add more')
+    }
+   // setCart(newcart);
   };
   const chooseBtn = () => {
     setCart([]);
   };
 
   const handleRandom = () => {
-    if(setCart === []){
-      alert('please select product')
-    }else{
-
       const newCart = [...cart];
       let randomItem = newCart[Math.floor(Math.random() * newCart.length)];
       setRandom(randomItem);
       setIsOpen(true);
-    };
+   
     }
 
   const closeModal = () => {
