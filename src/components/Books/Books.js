@@ -4,10 +4,26 @@ import { FaCommentMedical } from "react-icons/fa";
 import Cart from "../Cart/Cart";
 import "./Books.css";
 import ShowBooks from "./ShowBooks";
+import Modal from 'react-modal';
+
+const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+  Modal.setAppElement('#root');
 
 const Books = () => {
   const [books, setBooks] = useState([]);
   const [cart, setCart] = useState([]);
+  const [random , setRandom] = useState([])
+  const [modalIsOpen, setIsOpen] = useState(false);
+
 
   useEffect(() => {
     fetch("books.json")
@@ -25,12 +41,16 @@ const Books = () => {
   const handleRandom = () => {
     const newCart = [...cart];
     let randomItem = newCart[Math.floor(Math.random() * newCart.length)];
-    const { name, img } = randomItem;
-    console.log(randomItem);
-    alert(name + " " + "Selected..!");
-    //setCart([]);
+    setRandom(randomItem)
+    console.log(random.name);
+    setIsOpen(true);
+    
   };
 
+const closeModal = () =>{
+    setIsOpen(false);
+}
+  
   return (
     <div className="books-container container">
       <div class="row row-cols-1 row-cols-md-3 g-4 container mx-auto my-3">
@@ -64,6 +84,16 @@ const Books = () => {
           </button>
         </div>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      > 
+           <p> <img width="20px" src={random.img} alt="" /> {random.name}</p>
+          <button className="btn btn-info text-white" onClick={closeModal}>close</button>
+      </Modal>
+      
     </div>
   );
 };
